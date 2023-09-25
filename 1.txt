@@ -1,0 +1,509 @@
+comments
+1. single #
+2. multiline comment  """ ....
+                        ....
+                        """
+
+1.procedural style
+-------------------
+python types
+variables
+operator
+conditional statement
+collection statements
+File handling
+Function
+Module / packages
+Exception handling
+--------------------------------------
+
+2. Functional style
+-----------------------
+lambda
+comprehension
+high order function
+------------------------------------------------------
+3. object oriented programming
+
+class object method inheritance..
+case studies -- DB JSON..
+
+-----------------------------------------------------------------------
+
+new to programming
+==================
+1. topic concept
+2. syntax
+3. examples
+4. exercise
+
+variables
+=========
+namespace (or) label - hold/map a value
+
+syntax:-
+
+variablename=value
+|
+|--------------------starts A-Za-z_   not start with digits
+|---------------------- cant include space or special char
+
+var=120    var|120| 0x23652
+fname="p1.log"    
+
+Task
+====
+open python shell
+declare and initialize file system details
+
+filesystem type
+mount point
+disk partition
+file size
+
+ex: xfs /D1 /dev/sda1 6436GB
+display using print()
+============================================================================
+combine userdefined string and named variable
+--------------------------------------------
+
+1. comma
+"userdefined string",namedvariable
+
+2. "userdefined  %s string %d"%(namevariable,namevariable2)
+
+3. format method--oop--- 
+
+oop style
+=========
+class{
+
+ method
+}
+
+object.method()
+
+"userdefined string".format(namedvariable)
+
+
+
+scalar (single)   string-- %s collection--
+|
+number
+|
+int
+float
+complex data
+============================================================================
+
+type() - 
+type(56)-- int  ---------
+
+python 2.x
+==========
+type<int>
+
+python 3.x
+==========
+<class 'int'>
+
+type(12.33)-- float
+=====================================================================
+
+task
+=====
+
+declare and initialize bookdetails
+author name, no. of pages, price
+
+using format()- display details line by line- using single print (use \n)
+
+use type() - to display type of values in variables
+
+============================================================================
+
+typecasting- change one type to another type
+
+n=14
+type(n)---< class int>
+
+to float
+========
+
+f=float(n)
+type(f)----> float
+============================================
+
+Arithmetic operator
+===================
++   number
+    string  - concatenation
+-
+*
+/   floating point division
+
+//  integer division
+
+**  exp
+
+
+python follows infix
+
+operand1<OPERATOR>Operand2
+
+n=n+1  (or)
+n+=1
+
++
+ ---> numbers ---- arithetic opr
+ ----> str ------- str concatenation opr
+
+*
+ ---> number --- arithmetic opr
+ ---> str  ----- str repetation opr
+ 			str*Number
+                             |---- count of repetation
+ 
+===========================================
+
+
+
+keyboard<Stdin>-----------script----------Monitor<STDOUT>
+                input()           print()
+
+
+Syntax:-
+
+variable=input("Prompt message")
+---------       ---------------
+     |               |
+    stdin               stdout
+
+====================================================
+
+task
+====
+get filename from user and store it in variable fname
+
+Enter the filename p1.log
+Enter p1.log file size 100
+
+Recap
+=====
+variables  ---> variable=value     vs   variable=input("prompt msg")
+
+type()
+
+typecast
+
+using ,
+using %d %f 
+using "{}".format(var)
+
+NameError---> 
+TypeError--->
+ValueError--->
+=====================================================================================
+
+task
+=====
+
+step 1: read a disk partition name from <STDIN>
+        read the disk size from <STDIN>
+
+step 2: read a disk partition name from <STDIN>
+        read the disk size from <STDIN>
+
+step 3: calculate the sum of disk size
+
+step 4: display each partition name - size
+                          Total partition size
+
+  
+Expected output
+===============
+
+Enter the partition name : /dev/sda1
+Enter /dev/sda1 size : 1000
+
+
+Enter the partition name : /dev/sda2
+Enter /dev/sda2 size : 500
+
+Partition : /dev/sda1	Size: 1000 GB
+Partition : /dev/sda1   Size: 500 GB
+======================================
+		Total Size: 1500 GB
+======================================
+
+Multiline string literal
+=========================
+varaible=""" ...
+....
+....
+....
+"""
+===============================================================
+
+task
+====
+Write a python script
+use multiline string- display  system infomation in below format
+
+**********************system Info***********************
+
+1. kernel detail
+--------------------
+2.Login details
+-------------------
+3.Current details
+--------------------
+4. Mounted File system
+-----------------------
+*************************************************************
+
+
+use '''.................'''
+
+==========================================================================
+
+help(str)
+help("Hello")
+help('')
+
+===================================================================================
+
+relational operator
+======================
+
+== != < >  <=  >= ( input types--> int, float,str)  -->output type---> Bool type (True/ False)
+
+"root" == "root"
+
+100 < 10 
+
+10.22 > 5
+
+conditional statement
+======================
+
+--> Code block
+--> Testing/ validating
+--> block will execute once 
+--> if statement
+1) if only style
+===============
+Syntax:-
+
+if(condition):
+	True block statement1
+	statement2
+
+2) if.. else style
+
+Syntax:-
+------
+if(condition):
+	true block stmt
+else:
+	false statement
+=================================================================================
+
+
+Task
+====
+step1 : read username from <STDIN>
+step2 : test - input username is "root" or not  ----->display msg   - "Sorry you are not the root user"
+                                   |
+                                step 3: read a shell name from <STDIN>
+				|
+				step 4: display username and shell name
+				
+
+Nested structure
+=================
+if(condition1):
+	true stmt1
+	if(condition2):
+		truestmt2
+
+
+===================================================================
+
+if(condition1):
+	true stmt1
+	if(condition2):          ----|
+		true stm2            |----------- innermost if.else - part of outer if True block
+	else:                        |
+		false stmt2     -----|
+else:
+	false stmt1
+
+=====================================================================================
+
+Task
+====
+step1 : read username from <STDIN>
+step2 : test - input username is "root" or not  ----->display msg   - "Sorry you are not the root user"
+                                   |
+                                step 3: read a shell name from <STDIN>
+				               step 4: Test shellname is bash or not--"Sorry input shell is not bash"
+									  |
+									 step 4: display username and shell name
+
+=======================================================================================
+
+test shellname is bash---> initialize profile filename as bashrc
+test shellname is ksh ---> "          "          "      as kshrc
+|
+
+3) if ..elif...else
+
+-testing more than 1 condition
+
+syntax:-
+
+if(condition1):
+	true stmt1
+elif(condition2):
+	true stm2
+elif(condition3):
+	true stmt3
+..
+..
+else
+	false stmt
+
+if condition 1 is True----> truestm1  --> comes out of if
+
+if condition1 is false--> checks condition2 ---> truestmt 2---> comes out of if
+
+
+=======================================================
+Logical operator   --> input type is bool ----output type is bool
+-----------------
+In single conditional statement, test more than 1 condition
+
+ex:
+test port number is above 500-- condition1  port>500        condition1 <logicaloperator>condition2
+
+test port nuber less than 1000-- condition2  port<1000
+
+test username is root--c1           c1<logicalopr>c2
+test shellname is bash- c2
+
+python keyword
+
+and
+or
+not
+
+logical and
+===========
+condition1 condition2 result
+True		True	True
+True		False   False
+False		True	False
+False		False	False
+
+
+logical or
+==========
+c1	c2	result
+True	False	True
+False	True	True
+True	True	True
+False	False	False
+
+Logical not
+=============
+True--> False
+
+
+recap
+===
+s="56"---> int(s)---> 56
+n=56---> str(n)---->'56'
+f=12.33---> str(f)---> '12.33'
+
+int/str/float------> convert to bool----> bool(variable/value)---> True/False
+
+int value is 0---> bool(0)-> False
+
+int value is -1 --> bool(-1)->True
+
+int value is76786 -> bool(76786)--> True
+
+str value is ''--> bool('')---> False
+
+float value is 0.0--> bool(0.0)---> False
+
+
+============================================
+
+NoneType---> None 
+
+============================================================================	
+
+looping statements
+==================
+-code block
+- execute more than once
+
+1. condition based looping   - while   
+
+2. collection style looping  - for   - based on data (str,bytes,list,tuple,dict,set)
+
+
+1. condition based looping   - while   
+=====================================
+
+Syntax:-
+
+initialization
+while(condition):
+	code block
+	Arithmetic 
+
+rule1 : initialization  i=0                       i=5
+rule2:  test/validation   i<5- 5 times             i>10
+rule3:  Arithmetic  i=i+1  
+    i=0  i<5
+1st exe ->i=1
+2nd exe -> i=2
+3rd exe  -> i=3 
+4th exe-> i=4
+5th code-> i=5
+5<5--> False
+
+
+===========================================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
