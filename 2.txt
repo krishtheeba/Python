@@ -1,0 +1,387 @@
+for loop- collection based 
+
+syntax:-
+
+
+for variable in collection:      (str,list,tuple,bytes,dict,set)
+	..
+	..
+
+in- membership opr--> returns True/False
+
+string(str)- collection of chars 
+s="hai%^"
+
+"" or  ''
+index based access
+immutable
+
+s="Hai"  - s|H|a|i|
+             0 1 2   ==> index
+
+
+How to fetch single character
+=============================
+
+stringName[index]
+  |          |-----------out of range-- IndexError
+not named
+|
+NameError
+
+
+s[0]--> H
+s[1]-->a
+s[2]-->i
+s[10]--->IndexError
+
+
+s="Python Programming"
+   012345
+
+string slicing opr-> [:]
+
+stringname[n:m]-> from nth index to m-1 index
+
+s[0:6]-> Python
+
+s="Hai"
+   
+s| H | a | i|
+  0    1   2   ==> positive index
+  -3  -2  -1   ==> negative indexing
+
+
+s[0]=> H <== s[-3]
+s[1] ==> s[-2] ==> a
+
+s[2]==> s[-1]==> i
+
+s[-3:]
+================================================================================
+
+while..else
+
+for..else
+
+else--> default statement- after the end of all iteration- once
+
+===================================================================================
+
+List
+====
+like Array 
+- collection  of values - mixed values
+- list is index
+- list mutable
+- allow duplicates
+- ordered collection
+
+syntax:-
+
+listname=[listof elemnts separated by comma]
+
+
+How to fetch single value from list?
+
+listname[index]
+|           |----------out of range- IndexError
+not defined
+|
+nameError
+
+l=[1, "hjhj"]
+   0     1    positive indexing
+   -2    -1   negative index
+
+
+==============================
+l=[10,20,"data1"]
+
+to modify an existing element
+
+listname[oldindex]=UpdatedValue
+
+l[1]="/etc/passwd"
+
+to add new value to list
+
+	listname.append(Value)-> None
+	
+	listname.insert(index,Value)
+
+
+To remove entire list
+del(listname)
+
+To remove elements from list
+
+listname.pop() ---> removes the last value
+
+listname.pop(index)---> remove element in that index
+
+listname.count(Value)--> no. of occurence
+
+listName.index(Value)---> index
+
+==============================================================================
+
+python support multiple initialization
+
+variable1,variable2...variabeN=value1,value2....valueN
+
+=========================================================================================
+
+tuple
+====
+-collection of mixed values
+-ordered
+-Immutable
+-index based
+-()
+
+syntax:-
+tuplename=(collection of elemnts sep by commma)
+
+=======================================================================================
+
+import module
+
+module.function()----> tuple struct
+                         |
+                    rv=module.function()
+type(rv)--> tuple
+
+lrv= list(rv)  # convert tuple to list
+|
+add append insert
+delet  pop
+modify  
+
+rv=tuple(lrv)  #convert list to tuple
+
+======================================================================================
+
+list-[]
+tuple-()
+
+list and tuple
+===============
+
+List of List -> l=[[],[],[]]
+
+List of tuple -> l=[(),(),()]
+
+tuple of List - t=([],[],[])
+
+tuple of tuple-> t=((),(),())
+
+|	  |	
+|	unnamed
+named
+
+
+L=[100, [1,2,3,4]]
+	 0 1 2 3
+   ===   ========
+    0      1
+L[1]====> [1,2,3,4]
+
+L[1][1]    # listname[index]    ====> 2
+
+
+
+import os
+os.system("whoami")--> 
+
+
+range(n)-> starts from 0  - n number of integer
+
+range(n,s)
+=========================================================================================
+
+int,str,float,bool
+list,tuple
+
+str- immutable- index based access- collection of char
+
+list- mutable - index based access- collection of mixed types
+
+tuple- immutable- index based access - collection of mixed types
+
+File Handling
+==============
+
+
+keyboard ------------------Script-----------Monitor
+         input()			print()
+			-------------
+				|
+				|
+				|
+				Storage(File)
+
+	
+1.read data from <FILE> ---python---display to monitor<STDOUT>
+2.python--create a file---write data to <FILE>
+3.read data from <one File> ---python---create/write data to anotherfile 
+
+1. read a data from <File>---Python----display monitor
+===================================================
+open a file    ---> open("inputfile","mode")----> fobj
+                                       |------------'r'   'w'   'a'
+
+read content
+
+close the file
+
+
+application   
+open()(1)              fobj
+---------------------	|
+|			|		
+systemcalls()		|
+|			|
+filesystem(2)		|
+|
+dd			|
+|			|
+dc	     ----------0x12133  [d1 d2...dn]	
+--|---------|--------------
+Hardware (3)
+
+
+=============================================================================
+
+open(filename,"r")  is same as open(filename)
+                                         ------------// defualt mode  is r mode
+
+f=open("emp.csv","r")
+f.read()-------> '........'
+f.read()-------------------------> empty string
+f.close()
+
+(or)
+
+f=open("emp.csv")
+f.readlines()-----> ["d1\n","d2\n",...:dn\n"]
+f.readlines()-----> empty list
+f.close()
+
+=====================================================================
+
+fobj.read()-----> '......'
+fobj.readlines()----['d1\n','d2\n....'dn\n']
+fobj.readline()--'d1\n'
+=====================================================================
+Task
+====
+write a python program
+
+1. read a emp.csv file - line by line
+
+2. display last 3 lines to monitor
+=====================================================================
+
+Task
+====
+
+write a python program
+1. read a emp.csv file
+2. use membership opr to filter sales dept employee details
+3. display sales dept employee details
+===========================================================================
+
+2.python--create a file---write data to <FILE>
+
+wobj=open(filename,"w")
+wobj.write("SingleValue\n")
+
+wobj.write("Data1\n")---> //ok
+wobj.write(1234)   ---> // error
+wobj.write("1234\n")---> ok
+
+wobj.write(cost)--->error
+wobj.write(str(cost))---> ok
+
+wobj.write("Emp name is ",ename)  --> error
+
+wobj.write("Emp name is "+ename)---> ok
+
+Task
+====
+write a python program
+
+1. create a property file property.conf
+2. using while loop---- always active
+        read a network parameter from <STDIN>
+	write input data to external file
+	prompt a choice to user--> yes|Yes
+
+3. close the file
+
+ex:
+
+type=ethernet
+onboot=none
+bootproto=dhcp
+==============================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
