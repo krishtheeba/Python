@@ -1,0 +1,236 @@
+open(filename,mode)--> fobj
+read()-->'',readlines()-->[], readline()-->single line
+
+write("single string")
+with as
+
+with open(fileame,mode) as fobj:
+# fobj.close() called automatically
+
+dict - {key:value} - key based access -mutable -methods- setdefault,get,pop(key)
+set-{key1,key2} - not fetch single -add,update,remove,discard
+   - union,intersection,difference,symmetric_difference or |,&,-,^
+set() # empty set
+
+Function -
+
+def functionname(paramets):
+	....
+# fn defn
+
+# fn call   -->  functionname(Values)
+
+1. required arg  
+def fnname(a,b):
+	....
+fnname(10,20)
+========================
+2. default arg
+def fnname(a=10):
+	..
+fnname()
+fnname(10)
+===========================
+3. variable length arg
+def fnname(*a):   # a is tuple type
+	..
+fnname()   # empty tuple
+fnname(12,2) 
+==================================
+4. keyword arg
+def fnname(**a):  # dict type
+	..
+
+fnname()  # empty dict
+
+fnname(name="Hari",eid=101)   # a={"name":"Hari","eid":101} 
+
+====================================
+
+scope
+=====
+def fnnname():
+	global	 p
+	p=101
+	...
+fnnname()
+print(p)
+
+(or)
+
+def fname():
+	p=101
+	return p
+rv=fname()
+print(rv)
+
+# return - exit from function
+# break -  exit from loop
+#continue- skips remaining part of iteration and continues with next iteration
+exit() - exit python script
+
+=======================================================================================
+
+Modules
+=======
+
+- existing python code
+- reusability
+
+file: F:\\>p1.py
+===========
+port=8080
+d={'service':"ssshd','file':'/usr/lib/systemd/sshd.service'}
+
+def display():
+	print("display block")
+
+=============
+
+|------loadable/ runnable script
+
+
+import filename
+filename.member
+
+file: F:\\> a1.py                     file : F:\\>a2.py
+---------------- 			================
+
+import p1					import p1
+print("This is a1.py")				print("this is a1.py")
+p1.display()					print(p1.d['service'])
+print("end of a1.py")				if p1.port >1000:
+							print("Valid")
+
+============================================================================
+
+
+F:\\p1.py    # runnable script
+|
+-----D1\
+      |-----D2\file:a1.py    # running script
+              ------------
+              import p1
+	      p1.display()		
+
+----------------------------------------------------------------------------
+
+import filename ----->  1st python var   sys.path  - list type
+                                            |
+ 					[]----> found---> python filename.py		
+								|
+							source ACSII/TEXT file
+								|
+							 file.pyc--data file- pvm
+
+--------------------------------------------------------------------------------
+
+
+import sys - python details
+
+sys.path- []
+sys.modules- {}
+sys.version - ''
+sys.argv- list
+sys.platform-''
+
+----------------------------------------------------------------------------
+
+import os - os command _ directory manipulation
+
+os.system("command")
+
+in linux
+======
+import os
+os.system("whoami")
+os.system("ps")
+os.system("ls -ld"+directoryname)
+
+in winx
+=======
+import os
+os.system("whoami")
+os.system("powershell get-process")
+
+
+==================================================================
+
+import os
+import sys
+import runnable
+
+
+(or)
+
+import os, sys, runnable,pprint,json
+
+===========================================================================
+os.system()
+sys.path
+
+(or)
+
+import sys as s
+        |     |---------------------userdefined name
+        modulename    
+
+s.path
+s.version
+--------------------------------------------------------------------------------
+D1
+|---D2
+    |---D3
+	 |---filename
+import D1.D2.D3.filename
+
+D1.D2.D3.filename.member()
+
+(or)
+
+import D1.D2.D3.filename as F
+
+F.member()
+----------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
